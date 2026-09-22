@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mim - Meus Poemas</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lora:ital@0;1&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <canvas id="cursor-particulas"></canvas>
+    <canvas id="estrelas"></canvas>
+    <header>
+        <nav>
+            <div class="logo">Meus Poemas</div>
+            <button id="btn-tema" class="btn-tema" aria-label="Alternar tema">🌙</button>
+            <button id="btn-menu" class="btn-menu" aria-label="Menu"><span></span><span></span><span></span></button>
+            <ul>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../index.html#poemas">Poemas</a></li>
+                <li><a href="favoritos.html">Favoritos</a></li>
+                <li><a href="ranking.html">Ranking</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="pensamentos.html">Pensamentos</a></li>
+                <li><a href="sobre.html" class="active">Sobre Mim</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="poema-pagina fundo-sobre">
+        <div class="poema-conteudo">
+            <img src="../img/Marco1.png" alt="Foto do autor" class="sobre-img">
+            <h1>Sobre Mim</h1>
+            <p class="sobre-texto">Olá! Que bom ter você aqui. Meu nome é <strong>Marco Aurélio</strong> e escrevo poemas desde que me entendo por gente. A poesia sempre foi a minha forma de organizar sentimentos que a fala comum não dá conta.</p>
+            <p class="sobre-texto">Escrevo sobre o que vejo no cotidiano: o café da manhã, o silêncio de uma tarde, uma conversa na rua, o medo, a saudade, o recomeço.</p>
+            <p class="sobre-texto">Este site é um espaço para compartilhar meus versos com quem quiser ler. Se algum poema tocar você, já terá valido a pena escrever.</p>
+            <p class="sobre-citacao">"A vida, afinal, é abundante e lenta."</p>
+            <div class="cards-container" style="margin-top: 40px;">
+                <div class="card"><div class="card-icone">✍️</div><h3>Por que escrevo</h3><p>A poesia me ajuda a dar nome ao que sinto antes mesmo de entender.</p></div>
+                <div class="card"><div class="card-icone">📖</div><h3>O que me inspira</h3><p>O silêncio da manhã, um café quente, conversas sinceras e o dia a dia.</p></div>
+                <div class="card"><div class="card-icone">💙</div><h3>Meu objetivo</h3><p>Que algum verso meu encontre você no momento certo.</p></div>
+            </div>
+            <div class="navegacao-poemas" style="margin-top: 40px; justify-content: center;">
+                <a href="../index.html" class="btn-nav">← Voltar à Página Inicial</a>
+            </div>
+        </div>
+    </section>
+    <footer><div class="footer-conteudo"><div class="footer-marca">Meus Poemas</div><p class="footer-copy">© 2026 Meus Poemas · Todos os direitos reservados</p><p class="footer-feito">Feito com 💙 e muitas xícaras de café</p></div></footer>
+    <button id="btn-topo" class="btn-topo" aria-label="Voltar ao topo">↑</button>
+    <script src="../script.js"></script>
+</body>
+</html>

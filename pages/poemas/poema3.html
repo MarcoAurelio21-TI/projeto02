@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Casa Interna - Meus Poemas</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lora:ital@0;1&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/styles.css">
+</head>
+<body>
+    <canvas id="cursor-particulas"></canvas>
+    <canvas id="estrelas"></canvas>
+    <header>
+        <nav>
+            <div class="logo">Meus Poemas</div>
+            <button id="btn-idioma" class="btn-idioma" aria-label="Idioma">PT</button>
+            <button id="btn-tema" class="btn-tema" aria-label="Alternar tema">🌙</button>
+            <button id="btn-menu" class="btn-menu" aria-label="Menu"><span></span><span></span><span></span></button>
+            <ul>
+                <li><a href="../../index.html">Início</a></li>
+                <li><a href="../../index.html#poemas" class="active">Poemas</a></li>
+                <li><a href="../favoritos.html">Favoritos</a></li>
+                <li><a href="../ranking.html">Ranking</a></li>
+                <li><a href="../galeria.html">Galeria</a></li>
+                <li><a href="../pensamentos.html">Pensamentos</a></li>
+                <li><a href="../sobre.html">Sobre Mim</a></li>
+                <li><a href="../contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="poema-pagina fundo-poema3">
+        <div class="poema-conteudo">
+            <a href="../../index.html#poemas" class="btn-voltar">← Voltar para todos os poemas</a>
+            <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800" alt="A Casa Interna" class="poema-img" loading="lazy">
+            <h1>A Casa Interna</h1>
+            <div class="meta-poema">
+                <span class="tempo-leitura" data-texto="A tempestade corre solta e barulhenta lá fora, o mundo exige resposta rápida, pressa e ruído."></span>
+                <span id="contador-visitas"></span>
+            </div>
+            <p class="versos">
+                A tempestade corre solta e barulhenta lá fora,<br>
+                o mundo exige resposta rápida, pressa e ruído.<br>
+                Mas no centro exato do seu peito existe uma casa antiga,<br>
+                onde o silêncio finalmente volta a fazer sentido.<br>
+                Tranque as janelas para as cobranças do dia a dia,<br>
+                puxe o ar bem fundo, sinta o peito devagar se expandir.<br>
+                Deixe que os pensamentos agitados assentem como poeira,<br>
+                você não precisa dar conta de tudo para ter o direito de existir.<br>
+                A mente não precisa resolver o amanhã nesta hora exata,<br>
+                o excesso de futuro só traz peso, aperto e ansiedade.<br>
+                O único momento em que a vida realmente acontece e se cura<br>
+                é no espaço sagrado do agora, vivenciado com serenidade.<br>
+                Aprenda a recolher as forças quando tudo parecer demais,<br>
+                faça do seu respirar uma âncora firme em mar revolto.<br>
+                Nenhum vento forte pode derrubar a estrutura<br>
+                de quem encontra o próprio centro e não vive solto.<br>
+                Sente-se no centro macio e acolhedor da sua calma,<br>
+                desligue por completo o alarme incessante da urgência.<br>
+                Esta casa interna é o seu porto seguro, imóvel e eterno,<br>
+                onde a paz faz morada e renova suavemente a sua essência.
+            </p>
+            <div class="como-nasceu" onclick="this.classList.toggle('aberto')">
+                <div class="como-nasceu-header"><span>💭 Como nasceu este poema</span><span class="como-nasceu-seta">▾</span></div>
+                <div class="como-nasceu-conteudo"><p>Nasceu numa tarde em que o mundo parecia barulhento demais. Fechei os olhos e percebi que existe um lugar dentro de mim onde ninguém entra sem permissão.</p></div>
+            </div>
+            <div class="acoes-poema">
+                <button class="btn-favoritar" data-id="poema3">🤍 Favoritar</button>
+                <button class="btn-voz" id="btn-voz">🔊 Ouvir Poema</button>
+                <button class="btn-copiar" data-texto="A tempestade corre solta e barulhenta lá fora.">📋 Copiar</button>
+                <button class="btn-foco" id="btn-foco">📖 Modo Foco</button>
+            </div>
+            <button class="btn-anotar" id="btn-anotar">✍️ Minhas Anotações</button>
+            <div class="painel-anotacao" id="painel-anotacao">
+                <div class="painel-anotacao-header"><span>✍️ Suas anotações sobre este poema</span><button class="btn-fechar-anotacao">✕</button></div>
+                <textarea placeholder="O que este poema despertou em você?"></textarea>
+                <button class="btn-salvar-anotacao">💾 Salvar anotação</button>
+            </div>
+            <div class="compartilhar">
+                <p>Gostou? Compartilhe este poema</p>
+                <div class="compartilhar-botoes"><button class="btn-share">🔗 Compartilhar</button></div>
+            </div>
+            <div class="navegacao-poemas">
+                <a href="poema2.html" class="btn-nav">← Anterior</a>
+                <a href="../../index.html#poemas" class="btn-nav">Todos</a>
+                <a href="poema4.html" class="btn-nav">Próximo →</a>
+            </div>
+        </div>
+    </section>
+    <footer><div class="footer-conteudo"><div class="footer-marca">Meus Poemas</div><p class="footer-copy">© 2026 Meus Poemas · Todos os direitos reservados</p><p class="footer-feito">Feito com 💙 e muitas xícaras de café</p></div></footer>
+    <button id="btn-topo" class="btn-topo" aria-label="Voltar ao topo">↑</button>
+    <script src="../../script.js"></script>
+</body>
+</html>

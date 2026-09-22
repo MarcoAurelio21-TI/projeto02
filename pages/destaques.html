@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poema da Semana - Meus Poemas</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lora:ital@0;1&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <canvas id="cursor-particulas"></canvas>
+    <canvas id="estrelas"></canvas>
+    <header>
+        <nav>
+            <div class="logo">Meus Poemas</div>
+            <button id="btn-tema" class="btn-tema" aria-label="Alternar tema">🌙</button>
+            <button id="btn-menu" class="btn-menu" aria-label="Menu"><span></span><span></span><span></span></button>
+            <ul>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../index.html#poemas">Poemas</a></li>
+                <li><a href="favoritos.html">Favoritos</a></li>
+                <li><a href="ranking.html">Ranking</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="pensamentos.html">Pensamentos</a></li>
+                <li><a href="sobre.html">Sobre Mim</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="poema-pagina fundo-sobre">
+        <div class="poema-conteudo">
+            <p class="poema-do-dia-label">🌟 Poema em Destaque da Semana</p>
+            <div id="destaque-semana"></div>
+        </div>
+    </section>
+    <footer><div class="footer-conteudo"><div class="footer-marca">Meus Poemas</div><p class="footer-copy">© 2026 Meus Poemas · Todos os direitos reservados</p><p class="footer-feito">Feito com 💙 e muitas xícaras de café</p></div></footer>
+    <button id="btn-topo" class="btn-topo" aria-label="Voltar ao topo">↑</button>
+    <script src="../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const poemas = [
+                { titulo: 'O Recomeço Silencioso', link: 'poemas/poema1.html', img: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800', verso: 'A grama não apressa o seu verde na terra escura.' },
+                { titulo: 'O Espelho Amigo', link: 'poemas/poema2.html', img: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800', verso: 'Solte as pedras pesadas que você carrega nas mãos.' },
+                { titulo: 'A Casa Interna', link: 'poemas/poema3.html', img: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800', verso: 'No centro exato do seu peito existe uma casa antiga.' },
+                { titulo: 'O Valor do Invisível', link: 'poemas/poema4.html', img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800', verso: 'Há um pequeno milagre no café recém-passado.' },
+                { titulo: 'A Teia Humana', link: 'poemas/poema5.html', img: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800', verso: 'Cada pessoa carrega um peso invisível.' },
+                { titulo: 'O Silêncio das Coisas', link: 'poemas/poema6.html', img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800', verso: 'O silêncio das coisas é uma lição antiga.' },
+                { titulo: 'O Que Fica Depois da Chuva', link: 'poemas/poema7.html', img: 'https://images.unsplash.com/photo-1519692933481-e162a57d6721?w=800', verso: 'Depois que a chuva passa, o mundo fica mais verde.' },
+                { titulo: 'Cartas Que Não Enviei', link: 'poemas/poema8.html', img: 'https://images.unsplash.com/photo-1516414447565-b14be0adf13e?w=800', verso: 'Escrevi cartas que nunca cheguei a enviar.' },
+                { titulo: 'O Ofício de Esperar', link: 'poemas/poema9.html', img: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800', verso: 'Esperar não é ficar parado no mesmo lugar.' },
+                { titulo: 'A Coragem de Ficar', link: 'poemas/poema10.html', img: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800', verso: 'A coragem de ficar é feita de pequenas coisas.' },
+                { titulo: 'A Casa Que Habito', link: 'poemas/poema11.html', img: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800', verso: 'Dentro de mim existe uma casa antiga.' },
+                { titulo: 'Oração dos Dias Comuns', link: 'poemas/poema12.html', img: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=800', verso: 'Obrigado pelo pão que amanhece na mesa.' },
+                { titulo: 'Mapa de Cicatrizes', link: 'poemas/poema13.html', img: 'https://images.unsplash.com/photo-1516575334481-f85287c2c82d?w=800', verso: 'Meu corpo é um mapa de cicatrizes antigas.' },
+                { titulo: 'A Arte de Dizer Adeus', link: 'poemas/poema14.html', img: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800', verso: 'Dizer adeus é uma arte que ninguém ensina.' },
+                { titulo: 'O Que Aprendi com o Tempo', link: 'poemas/poema15.html', img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800', verso: 'Aprendi que a pressa não resolve nada.' },
+                { titulo: 'O Quarto Escuro', link: 'poemas/poema16.html', img: 'https://images.unsplash.com/photo-1516414447565-b14be0adf13e?w=800', verso: 'Há dias em que o mundo perde a cor.' },
+                { titulo: 'A Ansiedade às Três da Manhã', link: 'poemas/poema17.html', img: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800', verso: 'São três da manhã e o cérebro não desliga.' },
+                { titulo: 'Oração Simples', link: 'poemas/poema18.html', img: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?w=800', verso: 'Não sei rezar como os santos rezam.' },
+                { titulo: 'Fé de Grão de Mostarda', link: 'poemas/poema19.html', img: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800', verso: 'Não tenho a fé que move montanhas.' },
+                { titulo: 'O Silêncio das Praças', link: 'poemas/poema20.html', img: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800', verso: 'Vi um povo cansado nas praças da cidade.' },
+                { titulo: 'A Cidade que Não Dorme', link: 'poemas/poema21.html', img: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800', verso: 'A cidade que não dorme também não sonha.' },
+                { titulo: 'Amor em Tempos de Pressa', link: 'poemas/poema22.html', img: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=800', verso: 'Ninguém mais sabe amar devagar.' },
+                { titulo: 'Fim de Amor', link: 'poemas/poema23.html', img: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800', verso: 'O fim de amor não faz barulho.' },
+                { titulo: 'Amanhã é Outro Dia', link: 'poemas/poema24.html', img: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800', verso: 'Se hoje o mundo caiu sobre a sua cabeça.' },
+                { titulo: 'Raízes', link: 'poemas/poema25.html', img: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800', verso: 'Mesmo que cortem o tronco.' },
+                { titulo: 'O Último Rio', link: 'poemas/poema26.html', img: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800', verso: 'O rio que passava na minha rua.' },
+                { titulo: 'Amigo de Verdade', link: 'poemas/poema27.html', img: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800', verso: 'Amigo de verdade não é quem só aparece.' },
+                { titulo: 'Solidão', link: 'poemas/poema28.html', img: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800', verso: 'Solidão não é estar sozinho.' },
+                { titulo: 'Geração Conectada', link: 'poemas/poema29.html', img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800', verso: 'Estamos todos conectados.' },
+                { titulo: 'Despedida', link: 'poemas/poema30.html', img: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800', verso: 'Não teve tempo pra despedida.' },
+                { titulo: 'O Sonho Não Morreu', link: 'poemas/poema31.html', img: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800', verso: 'Disseram que era impossível.' }
+            ];
+            const hoje = new Date();
+            const inicioAno = new Date(hoje.getFullYear(), 0, 1);
+            const dias = Math.floor((hoje - inicioAno) / (24 * 60 * 60 * 1000));
+            const semana = Math.floor(dias / 7);
+            const escolhido = poemas[semana % poemas.length];
+            const el = document.getElementById('destaque-semana');
+            el.innerHTML = `
+                <img src="${escolhido.img}" alt="${escolhido.titulo}" class="poema-img">
+                <h1>${escolhido.titulo}</h1>
+                <p class="versos" style="text-align: center;">"${escolhido.verso}"</p>
+                <a href="${escolhido.link}" class="btn-nav">Ler o poema completo →</a>
+                <p style="margin-top: 25px; font-size: 0.9rem; color: var(--cor-texto-suave); font-style: italic;">Este destaque muda automaticamente toda semana.</p>
+            `;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Meus Poemas</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lora:ital@0;1&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <canvas id="cursor-particulas"></canvas>
+    <canvas id="estrelas"></canvas>
+    <header>
+        <nav>
+            <div class="logo">Meus Poemas</div>
+            <button id="btn-tema" class="btn-tema" aria-label="Alternar tema">🌙</button>
+            <button id="btn-menu" class="btn-menu" aria-label="Menu"><span></span><span></span><span></span></button>
+            <ul>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../index.html#poemas">Poemas</a></li>
+                <li><a href="favoritos.html">Favoritos</a></li>
+                <li><a href="ranking.html">Ranking</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="pensamentos.html">Pensamentos</a></li>
+                <li><a href="sobre.html">Sobre Mim</a></li>
+                <li><a href="contato.html" class="active">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="poema-pagina fundo-contato">
+        <div class="poema-conteudo">
+            <h1>Contato</h1>
+            <p style="font-style: italic; margin-bottom: 30px;">Quer comentar um poema, sugerir um tema ou apenas dizer olá? Me manda uma mensagem — vou adorar ler!</p>
+            <form class="form-contato" action="https://formspree.io/f/maenyqqj" method="POST">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                <label for="assunto">Assunto</label>
+                <input type="text" id="assunto" name="assunto" placeholder="Sobre o que quer falar?">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" rows="6" placeholder="Escreva sua mensagem..." required></textarea>
+                <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+            </form>
+            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 30px 0;">
+                <a href="mailto:oliveiraalvesmarcoaurelio08@gmail.com" class="btn-fale" style="margin: 0;">📧 Me envie um e-mail</a>
+                <a href="https://wa.me/5511939400970?text=Ol%C3%A1%20Marco!%20Vi%20seus%20poemas." target="_blank" rel="noopener" class="btn-fale" style="margin: 0;">💬 WhatsApp</a>
+            </div>
+            <div class="redes-sociais">
+                <p>Ou me encontre nas redes</p>
+                <div class="redes-lista">
+                    <a href="https://www.linkedin.com/in/marco-aur%C3%A9lio-oliveira-alves-/" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://github.com/MarcoAurelio21-TI" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://www.instagram.com/automarco.ti/" target="_blank" rel="noopener">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer><div class="footer-conteudo"><div class="footer-marca">Meus Poemas</div><p class="footer-copy">© 2026 Meus Poemas · Todos os direitos reservados</p><p class="footer-feito">Feito com 💙 e muitas xícaras de café</p></div></footer>
+    <button id="btn-topo" class="btn-topo" aria-label="Voltar ao topo">↑</button>
+    <script src="../script.js"></script>
+</body>
+</html>

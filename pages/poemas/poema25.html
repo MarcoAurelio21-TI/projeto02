@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raízes - Meus Poemas</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lora:ital@0;1&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/styles.css">
+</head>
+<body>
+    <canvas id="cursor-particulas"></canvas>
+    <canvas id="estrelas"></canvas>
+    <header>
+        <nav>
+            <div class="logo">Meus Poemas</div>
+            <button id="btn-idioma" class="btn-idioma" aria-label="Idioma">PT</button>
+            <button id="btn-tema" class="btn-tema" aria-label="Alternar tema">🌙</button>
+            <button id="btn-menu" class="btn-menu" aria-label="Menu"><span></span><span></span><span></span></button>
+            <ul>
+                <li><a href="../../index.html">Início</a></li>
+                <li><a href="../../index.html#poemas" class="active">Poemas</a></li>
+                <li><a href="../favoritos.html">Favoritos</a></li>
+                <li><a href="../ranking.html">Ranking</a></li>
+                <li><a href="../galeria.html">Galeria</a></li>
+                <li><a href="../pensamentos.html">Pensamentos</a></li>
+                <li><a href="../sobre.html">Sobre Mim</a></li>
+                <li><a href="../contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="poema-pagina fundo-poema25">
+        <div class="poema-conteudo">
+            <a href="../../index.html#poemas" class="btn-voltar">← Voltar para todos os poemas</a>
+            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800" alt="Raízes" class="poema-img" loading="lazy">
+            <h1>Raízes</h1>
+            <div class="meta-poema">
+                <span class="tempo-leitura" data-texto="Mesmo que cortem o tronco, as raízes continuam debaixo da terra."></span>
+                <span id="contador-visitas"></span>
+            </div>
+            <p class="versos">
+                Mesmo que cortem o tronco,<br>
+                as raízes continuam debaixo da terra.<br>
+                Mesmo que o vento derrube as flores,<br>
+                a semente continua esperando a primavera.<br>
+                A gente também é assim:<br>
+                cai, mas levanta; chora, mas seca.<br>
+                Perde, mas aprende; sofre, mas cresce.<br>
+                E um dia, sem aviso, floresce.<br>
+                Não é sobre nunca cair,<br>
+                é sobre nunca deixar de se levantar.<br>
+                Não é sobre nunca chorar,<br>
+                é sobre secar as lágrimas e continuar.<br>
+                A vida é feita de ciclos,<br>
+                e cada fim guarda um começo escondido.<br>
+                Então confie no tempo, nas raízes,<br>
+                e saiba que você também vai florescer.
+            </p>
+            <div class="como-nasceu" onclick="this.classList.toggle('aberto')">
+                <div class="como-nasceu-header"><span>💭 Como nasceu este poema</span><span class="como-nasceu-seta">▾</span></div>
+                <div class="como-nasceu-conteudo"><p>Nasceu observando uma árvore que parecia morta no inverno e voltou a florescer na primavera. Aprendi que com a gente também é assim.</p></div>
+            </div>
+            <div class="acoes-poema">
+                <button class="btn-favoritar" data-id="poema25">🤍 Favoritar</button>
+                <button class="btn-voz" id="btn-voz">🔊 Ouvir Poema</button>
+                <button class="btn-copiar" data-texto="Mesmo que cortem o tronco.">📋 Copiar</button>
+                <button class="btn-foco" id="btn-foco">📖 Modo Foco</button>
+            </div>
+            <button class="btn-anotar" id="btn-anotar">✍️ Minhas Anotações</button>
+            <div class="painel-anotacao" id="painel-anotacao">
+                <div class="painel-anotacao-header"><span>✍️ Suas anotações sobre este poema</span><button class="btn-fechar-anotacao">✕</button></div>
+                <textarea placeholder="O que este poema despertou em você?"></textarea>
+                <button class="btn-salvar-anotacao">💾 Salvar anotação</button>
+            </div>
+            <div class="compartilhar">
+                <p>Gostou? Compartilhe este poema</p>
+                <div class="compartilhar-botoes"><button class="btn-share">🔗 Compartilhar</button></div>
+            </div>
+            <div class="navegacao-poemas">
+                <a href="poema24.html" class="btn-nav">← Anterior</a>
+                <a href="../../index.html#poemas" class="btn-nav">Todos</a>
+                <a href="poema26.html" class="btn-nav">Próximo →</a>
+            </div>
+        </div>
+    </section>
+    <footer><div class="footer-conteudo"><div class="footer-marca">Meus Poemas</div><p class="footer-copy">© 2026 Meus Poemas · Todos os direitos reservados</p><p class="footer-feito">Feito com 💙 e muitas xícaras de café</p></div></footer>
+    <button id="btn-topo" class="btn-topo" aria-label="Voltar ao topo">↑</button>
+    <script src="../../script.js"></script>
+</body>
+</html>

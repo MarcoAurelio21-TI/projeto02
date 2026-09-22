@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking dos Leitores - Meus Poemas</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lora:ital@0;1&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <canvas id="cursor-particulas"></canvas>
+    <canvas id="estrelas"></canvas>
+    <header>
+        <nav>
+            <div class="logo">Meus Poemas</div>
+            <button id="btn-tema" class="btn-tema" aria-label="Alternar tema">🌙</button>
+            <button id="btn-menu" class="btn-menu" aria-label="Menu"><span></span><span></span><span></span></button>
+            <ul>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../index.html#poemas">Poemas</a></li>
+                <li><a href="favoritos.html">Favoritos</a></li>
+                <li><a href="ranking.html" class="active">Ranking</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="pensamentos.html">Pensamentos</a></li>
+                <li><a href="sobre.html">Sobre Mim</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="poemas fundo-favoritos">
+        <h2 class="section-title">🏆 Ranking dos Leitores</h2>
+        <p style="text-align: center; font-style: italic; margin-bottom: 40px; color: #fff;">Os poemas mais favoritados por você.</p>
+        <div class="cards-container" id="lista-ranking"></div>
+        <p id="ranking-vazio" style="display: none; text-align: center; font-style: italic; color: #fff; padding: 40px;">
+            Você ainda não favoritou nenhum poema. 💔<br>
+            Vá para a <a href="../index.html#poemas" style="color: #fff; text-decoration: underline;">página inicial</a> e clique em 🤍 Favoritar.
+        </p>
+    </section>
+    <footer><div class="footer-conteudo"><div class="footer-marca">Meus Poemas</div><p class="footer-copy">© 2026 Meus Poemas · Todos os direitos reservados</p><p class="footer-feito">Feito com 💙 e muitas xícaras de café</p></div></footer>
+    <button id="btn-topo" class="btn-topo" aria-label="Voltar ao topo">↑</button>
+    <script src="../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const poemas = {
+                'poema1': { titulo: 'O Recomeço Silencioso', img: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800' },
+                'poema2': { titulo: 'O Espelho Amigo', img: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800' },
+                'poema3': { titulo: 'A Casa Interna', img: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800' },
+                'poema4': { titulo: 'O Valor do Invisível', img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800' },
+                'poema5': { titulo: 'A Teia Humana', img: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800' },
+                'poema6': { titulo: 'O Silêncio das Coisas', img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800' },
+                'poema7': { titulo: 'O Que Fica Depois da Chuva', img: 'https://images.unsplash.com/photo-1519692933481-e162a57d6721?w=800' },
+                'poema8': { titulo: 'Cartas Que Não Enviei', img: 'https://images.unsplash.com/photo-1516414447565-b14be0adf13e?w=800' },
+                'poema9': { titulo: 'O Ofício de Esperar', img: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800' },
+                'poema10': { titulo: 'A Coragem de Ficar', img: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800' },
+                'poema11': { titulo: 'A Casa Que Habito', img: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800' },
+                'poema12': { titulo: 'Oração dos Dias Comuns', img: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=800' },
+                'poema13': { titulo: 'Mapa de Cicatrizes', img: 'https://images.unsplash.com/photo-1516575334481-f85287c2c82d?w=800' },
+                'poema14': { titulo: 'A Arte de Dizer Adeus', img: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800' },
+                'poema15': { titulo: 'O Que Aprendi com o Tempo', img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800' },
+                'poema16': { titulo: 'O Quarto Escuro', img: 'https://images.unsplash.com/photo-1516414447565-b14be0adf13e?w=800' },
+                'poema17': { titulo: 'A Ansiedade às Três da Manhã', img: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800' },
+                'poema18': { titulo: 'Oração Simples', img: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?w=800' },
+                'poema19': { titulo: 'Fé de Grão de Mostarda', img: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800' },
+                'poema20': { titulo: 'O Silêncio das Praças', img: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800' },
+                'poema21': { titulo: 'A Cidade que Não Dorme', img: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800' },
+                'poema22': { titulo: 'Amor em Tempos de Pressa', img: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=800' },
+                'poema23': { titulo: 'Fim de Amor', img: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800' },
+                'poema24': { titulo: 'Amanhã é Outro Dia', img: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800' },
+                'poema25': { titulo: 'Raízes', img: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800' },
+                'poema26': { titulo: 'O Último Rio', img: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800' },
+                'poema27': { titulo: 'Amigo de Verdade', img: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800' },
+                'poema28': { titulo: 'Solidão', img: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800' },
+                'poema29': { titulo: 'Geração Conectada', img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800' },
+                'poema30': { titulo: 'Despedida', img: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800' },
+                'poema31': { titulo: 'O Sonho Não Morreu', img: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800' }
+            };
+            const lista = document.getElementById('lista-ranking');
+            const vazio = document.getElementById('ranking-vazio');
+            const favs = JSON.parse(localStorage.getItem('favoritos') || '[]');
+            if (favs.length === 0) { vazio.style.display = 'block'; return; }
+            const favoritados = favs.map(id => ({ id, ...poemas[id] })).filter(p => p.titulo).reverse();
+            favoritados.forEach((p, i) => {
+                const num = p.id.replace('poema', '');
+                const medalha = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `#${i + 1}`;
+                lista.innerHTML += `
+                    <a href="poemas/poema${num}.html" class="card-poema" style="position: relative;">
+                        <span style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 6px 12px; border-radius: 50px; font-weight: bold; font-size: 0.9rem; z-index: 2;">${medalha}</span>
+                        <img src="${p.img}" alt="${p.titulo}" loading="lazy">
+                        <h3>${p.titulo}</h3>
+                        <p>❤️ Favoritado por você</p>
+                    </a>
+                `;
+            });
+        });
+    </script>
+</body>
+</html>

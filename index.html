@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Poemas - Marco Aurélio</title>
+    <meta name="description" content="Poemas de Marco Aurélio sobre o cotidiano, o silêncio, o recomeço e a vida.">
+    <meta name="author" content="Marco Aurélio Oliveira Alves">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Meus Poemas - Marco Aurélio">
+    <meta property="og:description" content="31 poemas sobre o cotidiano, o silêncio, o recomeço e a vida.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lora:ital@0;1&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+
+    <canvas id="cursor-particulas"></canvas>
+    <canvas id="estrelas"></canvas>
+
+    <header>
+        <nav>
+            <div class="logo">Meus Poemas</div>
+            <button id="btn-idioma" class="btn-idioma" aria-label="Idioma">PT</button>
+            <button id="btn-tema" class="btn-tema" aria-label="Alternar tema">🌙</button>
+            <button id="btn-menu" class="btn-menu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul>
+                <li><a href="index.html" class="active">Início</a></li>
+                <li><a href="#poemas">Poemas</a></li>
+                <li><a href="pages/favoritos.html">Favoritos</a></li>
+                <li><a href="pages/ranking.html">Ranking</a></li>
+                <li><a href="pages/galeria.html">Galeria</a></li>
+                <li><a href="pages/pensamentos.html">Pensamentos</a></li>
+                <li><a href="pages/sobre.html">Sobre Mim</a></li>
+                <li><a href="pages/contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <canvas id="particulas"></canvas>
+        <div class="hero-conteudo">
+            <h1 data-pt="Bem-vindo aos meus Poemas" data-en="Welcome to my Poems" data-es="Bienvenido a mis Poemas">Bem-vindo aos meus Poemas</h1>
+            <p data-pt="Escolha um poema abaixo e mergulhe em versos que falam ao coração." data-en="Choose a poem below and dive into verses that speak to the heart." data-es="Elige un poema abajo y sumérgete en versos que hablan al corazón.">Escolha um poema abaixo e mergulhe em versos que falam ao coração.</p>
+            <a href="#poemas" class="btn" data-pt="Ver Poemas" data-en="See Poems" data-es="Ver Poemas">Ver Poemas</a>
+        </div>
+    </section>
+
+    <section style="padding: 60px 24px; background-color: var(--cor-fundo);">
+        <div class="poema-do-dia-container" id="poema-do-dia" data-aos="fade-up"></div>
+    </section>
+
+    <section class="poemas" id="poemas">
+        <h2 class="section-title" data-aos="fade-up">Escolha um Poema</h2>
+
+        <div class="busca-container" data-aos="fade-up">
+            <input type="text" id="campo-busca" placeholder="🔍 Buscar poema...">
+        </div>
+
+        <div class="filtros-tema" data-aos="fade-up">
+            <button class="filtro-btn ativo" data-filtro="todos">Todos</button>
+            <button class="filtro-btn" data-filtro="recomeco">Recomeço</button>
+            <button class="filtro-btn" data-filtro="introspeccao">Introspecção</button>
+            <button class="filtro-btn" data-filtro="cotidiano">Cotidiano</button>
+            <button class="filtro-btn" data-filtro="tempo">Tempo</button>
+            <button class="filtro-btn" data-filtro="relacoes">Relações</button>
+            <button class="filtro-btn" data-filtro="depressao">Depressão</button>
+            <button class="filtro-btn" data-filtro="ansiedade">Ansiedade</button>
+            <button class="filtro-btn" data-filtro="religiao">Religião</button>
+            <button class="filtro-btn" data-filtro="politica">Política</button>
+            <button class="filtro-btn" data-filtro="amor">Amor</button>
+            <button class="filtro-btn" data-filtro="esperanca">Esperança</button>
+            <button class="filtro-btn" data-filtro="natureza">Natureza</button>
+            <button class="filtro-btn" data-filtro="amizade">Amizade</button>
+            <button class="filtro-btn" data-filtro="solidao">Solidão</button>
+            <button class="filtro-btn" data-filtro="tecnologia">Tecnologia</button>
+            <button class="filtro-btn" data-filtro="luto">Luto</button>
+            <button class="filtro-btn" data-filtro="sonhos">Sonhos</button>
+        </div>
+
+        <button id="btn-aleatorio" class="btn-aleatorio" data-aos="fade-up">🎲 Poema Aleatório</button>
+
+        <div class="cards-container" id="lista-poemas">
+            <a href="pages/poemas/poema1.html" class="card-poema" data-tema="recomeco" data-aos="fade-up" data-aos-delay="0">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800" alt="Poema 1" loading="lazy">
+                <h3>O Recomeço Silencioso</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema2.html" class="card-poema" data-tema="introspeccao" data-aos="fade-up" data-aos-delay="50">
+                <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800" alt="Poema 2" loading="lazy">
+                <h3>O Espelho Amigo</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema3.html" class="card-poema" data-tema="introspeccao" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800" alt="Poema 3" loading="lazy">
+                <h3>A Casa Interna</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema4.html" class="card-poema" data-tema="cotidiano" data-aos="fade-up" data-aos-delay="150">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800" alt="Poema 4" loading="lazy">
+                <h3>O Valor do Invisível</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema5.html" class="card-poema" data-tema="relacoes" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800" alt="Poema 5" loading="lazy">
+                <h3>A Teia Humana</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema6.html" class="card-poema" data-tema="cotidiano" data-aos="fade-up" data-aos-delay="0">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800" alt="Poema 6" loading="lazy">
+                <h3>O Silêncio das Coisas</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema7.html" class="card-poema" data-tema="recomeco" data-aos="fade-up" data-aos-delay="50">
+                <img src="https://images.unsplash.com/photo-1519692933481-e162a57d6721?w=800" alt="Poema 7" loading="lazy">
+                <h3>O Que Fica Depois da Chuva</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema8.html" class="card-poema" data-tema="relacoes" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1516414447565-b14be0adf13e?w=800" alt="Poema 8" loading="lazy">
+                <h3>Cartas Que Não Enviei</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema9.html" class="card-poema" data-tema="tempo" data-aos="fade-up" data-aos-delay="150">
+                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800" alt="Poema 9" loading="lazy">
+                <h3>O Ofício de Esperar</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema10.html" class="card-poema" data-tema="recomeco" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800" alt="Poema 10" loading="lazy">
+                <h3>A Coragem de Ficar</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema11.html" class="card-poema" data-tema="introspeccao" data-aos="fade-up" data-aos-delay="0">
+                <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800" alt="Poema 11" loading="lazy">
+                <h3>A Casa Que Habito</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema12.html" class="card-poema" data-tema="cotidiano" data-aos="fade-up" data-aos-delay="50">
+                <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=800" alt="Poema 12" loading="lazy">
+                <h3>Oração dos Dias Comuns</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema13.html" class="card-poema" data-tema="introspeccao" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1516575334481-f85287c2c82d?w=800" alt="Poema 13" loading="lazy">
+                <h3>Mapa de Cicatrizes</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema14.html" class="card-poema" data-tema="relacoes" data-aos="fade-up" data-aos-delay="150">
+                <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800" alt="Poema 14" loading="lazy">
+                <h3>A Arte de Dizer Adeus</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema15.html" class="card-poema" data-tema="tempo" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800" alt="Poema 15" loading="lazy">
+                <h3>O Que Aprendi com o Tempo</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema16.html" class="card-poema" data-tema="depressao" data-aos="fade-up" data-aos-delay="0">
+                <img src="https://images.unsplash.com/photo-1516414447565-b14be0adf13e?w=800" alt="Poema 16" loading="lazy">
+                <h3>O Quarto Escuro</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema17.html" class="card-poema" data-tema="ansiedade" data-aos="fade-up" data-aos-delay="50">
+                <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800" alt="Poema 17" loading="lazy">
+                <h3>A Ansiedade às Três da Manhã</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema18.html" class="card-poema" data-tema="religiao" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?w=800" alt="Poema 18" loading="lazy">
+                <h3>Oração Simples</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema19.html" class="card-poema" data-tema="religiao" data-aos="fade-up" data-aos-delay="150">
+                <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800" alt="Poema 19" loading="lazy">
+                <h3>Fé de Grão de Mostarda</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema20.html" class="card-poema" data-tema="politica" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800" alt="Poema 20" loading="lazy">
+                <h3>O Silêncio das Praças</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema21.html" class="card-poema" data-tema="politica" data-aos="fade-up" data-aos-delay="0">
+                <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800" alt="Poema 21" loading="lazy">
+                <h3>A Cidade que Não Dorme</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema22.html" class="card-poema" data-tema="amor" data-aos="fade-up" data-aos-delay="50">
+                <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=800" alt="Poema 22" loading="lazy">
+                <h3>Amor em Tempos de Pressa</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema23.html" class="card-poema" data-tema="amor" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800" alt="Poema 23" loading="lazy">
+                <h3>Fim de Amor</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema24.html" class="card-poema" data-tema="esperanca" data-aos="fade-up" data-aos-delay="150">
+                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800" alt="Poema 24" loading="lazy">
+                <h3>Amanhã é Outro Dia</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema25.html" class="card-poema" data-tema="esperanca" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800" alt="Poema 25" loading="lazy">
+                <h3>Raízes</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema26.html" class="card-poema" data-tema="natureza" data-aos="fade-up" data-aos-delay="0">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800" alt="Poema 26" loading="lazy">
+                <h3>O Último Rio</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema27.html" class="card-poema" data-tema="amizade" data-aos="fade-up" data-aos-delay="50">
+                <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800" alt="Poema 27" loading="lazy">
+                <h3>Amigo de Verdade</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema28.html" class="card-poema" data-tema="solidao" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800" alt="Poema 28" loading="lazy">
+                <h3>Solidão</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema29.html" class="card-poema" data-tema="tecnologia" data-aos="fade-up" data-aos-delay="150">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800" alt="Poema 29" loading="lazy">
+                <h3>Geração Conectada</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema30.html" class="card-poema" data-tema="luto" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800" alt="Poema 30" loading="lazy">
+                <h3>Despedida</h3><p>Clique para ler</p>
+            </a>
+            <a href="pages/poemas/poema31.html" class="card-poema" data-tema="sonhos" data-aos="fade-up" data-aos-delay="0">
+                <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800" alt="Poema 31" loading="lazy">
+                <h3>O Sonho Não Morreu</h3><p>Clique para ler</p>
+            </a>
+        </div>
+    </section>
+
+    <section class="poemas" style="background-color: var(--cor-fundo);">
+        <h2 class="section-title" data-aos="fade-up">🏆 Ranking dos Leitores</h2>
+        <p style="text-align: center; font-style: italic; color: var(--cor-texto-suave); margin-bottom: 40px;" data-aos="fade-up">
+            Os poemas que você mais favoritou.
+        </p>
+        <div class="cards-container" id="ranking-home" data-aos="fade-up"></div>
+        <p id="ranking-home-vazio" style="display: none; text-align: center; font-style: italic; color: var(--cor-texto-suave); padding: 40px;">
+            Você ainda não favoritou nenhum poema. 💔<br>
+            Clique em 🤍 Favoritar em alguns poemas acima.
+        </p>
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="pages/ranking.html" class="btn-aleatorio">Ver ranking completo →</a>
+        </div>
+    </section>
+
+    <section id="sobre" class="sobre">
+        <h2 class="section-title" data-aos="fade-up">Sobre Mim</h2>
+        <div class="sobre-conteudo" data-aos="fade-up">
+            <img src="./img/Marco1.png" alt="Foto do autor" class="sobre-img">
+            <p class="sobre-texto">Olá! Que bom ter você aqui. Meu nome é <strong>Marco Aurélio</strong> e escrevo poemas desde que me entendo por gente.</p>
+            <p class="sobre-texto">Escrevo sobre o que vejo no cotidiano: o café da manhã, o silêncio de uma tarde, uma conversa na rua, o medo, a saudade, o recomeço.</p>
+            <p class="sobre-citacao">"A vida, afinal, é abundante e lenta."</p>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <h3>Receba novos poemas</h3>
+        <p>Deixe seu e-mail e receba um poema novo por mês.</p>
+        <form class="form-newsletter" action="https://formspree.io/f/maenyqqj" method="POST">
+            <input type="email" name="email" placeholder="seu@email.com" required>
+            <button type="submit">Inscrever</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-conteudo">
+            <div class="footer-marca">Meus Poemas</div>
+            <p class="footer-copy">© 2026 Meus Poemas · Todos os direitos reservados</p>
+            <p class="footer-feito">Feito com 💙 e muitas xícaras de café</p>
+        </div>
+    </footer>
+
+    <button id="btn-topo" class="btn-topo" aria-label="Voltar ao topo">↑</button>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const poemas = {
+                'poema1': { titulo: 'O Recomeço Silencioso', img: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800' },
+                'poema2': { titulo: 'O Espelho Amigo', img: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800' },
+                'poema3': { titulo: 'A Casa Interna', img: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800' },
+                'poema4': { titulo: 'O Valor do Invisível', img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800' },
+                'poema5': { titulo: 'A Teia Humana', img: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800' },
+                'poema6': { titulo: 'O Silêncio das Coisas', img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800' },
+                'poema7': { titulo: 'O Que Fica Depois da Chuva', img: 'https://images.unsplash.com/photo-1519692933481-e162a57d6721?w=800' },
+                'poema8': { titulo: 'Cartas Que Não Enviei', img: 'https://images.unsplash.com/photo-1516414447565-b14be0adf13e?w=800' },
+                'poema9': { titulo: 'O Ofício de Esperar', img: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800' },
+                'poema10': { titulo: 'A Coragem de Ficar', img: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800' },
+                'poema11': { titulo: 'A Casa Que Habito', img: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800' },
+                'poema12': { titulo: 'Oração dos Dias Comuns', img: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=800' },
+                'poema13': { titulo: 'Mapa de Cicatrizes', img: 'https://images.unsplash.com/photo-1516575334481-f85287c2c82d?w=800' },
+                'poema14': { titulo: 'A Arte de Dizer Adeus', img: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800' },
+                'poema15': { titulo: 'O Que Aprendi com o Tempo', img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800' },
+                'poema16': { titulo: 'O Quarto Escuro', img: 'https://images.unsplash.com/photo-1516414447565-b14be0adf13e?w=800' },
+                'poema17': { titulo: 'A Ansiedade às Três da Manhã', img: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800' },
+                'poema18': { titulo: 'Oração Simples', img: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?w=800' },
+                'poema19': { titulo: 'Fé de Grão de Mostarda', img: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800' },
+                'poema20': { titulo: 'O Silêncio das Praças', img: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800' },
+                'poema21': { titulo: 'A Cidade que Não Dorme', img: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800' },
+                'poema22': { titulo: 'Amor em Tempos de Pressa', img: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=800' },
+                'poema23': { titulo: 'Fim de Amor', img: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800' },
+                'poema24': { titulo: 'Amanhã é Outro Dia', img: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800' },
+                'poema25': { titulo: 'Raízes', img: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800' },
+                'poema26': { titulo: 'O Último Rio', img: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800' },
+                'poema27': { titulo: 'Amigo de Verdade', img: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800' },
+                'poema28': { titulo: 'Solidão', img: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800' },
+                'poema29': { titulo: 'Geração Conectada', img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800' },
+                'poema30': { titulo: 'Despedida', img: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800' },
+                'poema31': { titulo: 'O Sonho Não Morreu', img: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800' }
+            };
+
+            const rankingHome = document.getElementById('ranking-home');
+            const vazio = document.getElementById('ranking-home-vazio');
+            if (!rankingHome) return;
+
+            const favs = JSON.parse(localStorage.getItem('favoritos') || '[]');
+
+            if (favs.length === 0) {
+                vazio.style.display = 'block';
+                return;
+            }
+
+            const favoritados = favs.map(id => ({ id, ...poemas[id] })).filter(p => p.titulo).reverse().slice(0, 5);
+
+            favoritados.forEach((p, i) => {
+                const num = p.id.replace('poema', '');
+                const medalha = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `#${i + 1}`;
+                rankingHome.innerHTML += `
+                    <a href="pages/poemas/poema${num}.html" class="card-poema" style="position: relative;">
+                        <span style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 6px 12px; border-radius: 50px; font-weight: bold; font-size: 0.9rem; z-index: 2;">${medalha}</span>
+                        <img src="${p.img}" alt="${p.titulo}" loading="lazy">
+                        <h3>${p.titulo}</h3>
+                        <p>❤️ Favoritado por você</p>
+                    </a>
+                `;
+            });
+        });
+    </script>
+</body>
+</html>
